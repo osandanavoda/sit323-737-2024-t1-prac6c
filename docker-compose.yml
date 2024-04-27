@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: osandanavoda/week5task
+    ports:
+      - '17870:3040'
+    environment:
+      - PORT=17870
+    container_name: pkk
+    networks:
+      - my-net
+
+  app1:
+    build: .
+    image: osandanavoda/week5task
+    ports:
+      - '17869:3040'
+    environment:
+      - PORT=17869
+    container_name: bbbb
+    networks:
+      - my-net
+
+
+networks:
+  my-net:
+    driver: bridge
